@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Average Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-image: url(https://i.pinimg.com/236x/67/22/f6/6722f625c6344416c1d2d5cdb77f842a.jpg);
+            background-size: cover;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 50px;
+            border-radius: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            background-color: rgba(62, 219, 169, 0.753);
+           font-style: normal;
+           font-stretch: narrower;
+        }
+        .grades {
+            display: flex;y;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 20px;
+            padding-right:20px;
+            background-color: beige;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            border-radius: 8px;
+            padding-bottom: 20px;
+       }
+       .grades:hover{
+        background-color: rgba(165, 226, 235, 0.26);
+       } 
+      
+       
+        .grades input {
+            width: 50px;
+            text-align: center;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .cover{
+           
+            background-color: rgba(230, 219, 225, 0.226);
+            border-radius: 20px;
+        }
+        .average{
+            background-color: black; rgb(156, 127, 91);
+            color: white;
+            font-weight: bold;
+            border-style: double;
+
+        }
+        .average:hover{
+            background-color: rgb(156, 127, 91);
+        }
+        .num{
+            background-color: blanchedalmond;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .result{
+            background-color: antiquewhite;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 8px;
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cover"> 
+    <div class="container">
+        <h1>Grade Average Calculator</h1>
+        <div class="grades">
+            <label for="grade1">Grade 1:</label>
+            <input class="num" type="number" id="grade1" value="85">
+        </div>
+        <div class="grades">
+            <label for="grade2">Grade 2:</label>
+            <input  class="num" type="number" id="grade2" value="90">
+        </div>
+        <div class="grades">
+            <label for="grade3">Grade 3:</label>
+            <input  class="num" type="number" id="grade3" value="78">
+        </div>
+        <div class="grades">
+            <label for="grade4">Grade 4:</label>
+            <input class="num" type="number" id="grade4" value="92">
+        </div>
+        <div class="grades">
+            <label for="grade5">Grade 5:</label>
+            <input class="num" type="number" id="grade5" value="88">
+        </div>
+        <button class="average" onclick="calculateAverage()">Average </button>
+        <div class="result" id="result"></div>
+    </div>
+</div>
+    <script>
+        function calculateAverage() {
+            let grade1 = parseFloat(document.getElementById('grade1').value);
+            let grade2 = parseFloat(document.getElementById('grade2').value);
+            let grade3 = parseFloat(document.getElementById('grade3').value);
+            let grade4 = parseFloat(document.getElementById('grade4').value);
+            let grade5 = parseFloat(document.getElementById('grade5').value);
+
+            let average = (grade1 + grade2 + grade3 + grade4 + grade5) / 5;
+
+            document.getElementById('result').innerText = 'Average Grade: ' + average.toFixed(2); 
+        }
+    </script>
+</body>
+</html>
